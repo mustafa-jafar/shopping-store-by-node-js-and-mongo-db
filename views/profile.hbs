@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>profile </h1>
+
+
+   
+
+     <div class="row">
+        <p class="col-lg-2">number
+
+        </p>
+        <p class="col-lg-2">product name
+
+        </p>
+        <p class="col">product number
+
+        </p>
+        <p class="col">product price
+
+        </p>
+    </div>
+    {{order}}
+    {{#each order}}
+    {{this.orderprice}}
+    {{#each this.cart}}
+        {{this._selectCard}}
+    {{/each}}
+    {{/each}}
+</body>
+</html>

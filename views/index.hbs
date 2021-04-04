@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>main</title>
+</head>
+
+<body>
+  {{#if scucsse}}
+    <div class="alert alert-success text-center">{{scucsse}}</div>
+  {{/if}}
+  {{#each products}}
+    <div class="row">
+      {{#each this}}
+         <div class="prodect col-sm-3" >
+          <div class="card" >
+            <img class="card-img-top" src="{{this.images}}" alt="Card image" >
+            <div class="card-body">
+              <h4 class="card-title">{{this.title}}</h4>
+              <p class="card-text">{{this.information}}</p>
+              <p class="card-text">{{this.Price}}</p>
+              <a href="/cart/{{this.title}}/{{this._id}}/{{this.Price}}" class="btn btn-primary text-center">pay</a>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+         
+    
+      
+       
+    </div>
+  {{/each}}
+   
+      
+      
+</body>
+
+</html>

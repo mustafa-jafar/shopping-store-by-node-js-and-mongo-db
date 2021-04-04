@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+        {{#each massages}}
+        <div class="alert alert-danger text-center">
+            {{this}}
+        </div>
+
+        {{/each}}
+    <div class="row" >
+        <form class="form-signin" method="POST" action="/singup">
+            <h1 class="h3 mb-3 font-weight-normal">Please sign up</h1>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <p> user name</p>
+            <input type="text" name="userName" class="form-control" placeholder="user name">
+            <br>
+            <p> date of born</p>
+            <input type="date" name='userBorn' class="form-control" placeholder="born date">
+            <br>
+            <p> user email</p>
+            <input type="email" id="inputEmail" name="userEmail" class="form-control" placeholder="Email address"
+                autofocus>
+            <br>
+            <p> user password</p>
+            <input type="password" name="userPassword" class="form-control" placeholder="Password">
+            <div class="checkbox mb-3">
+            </div>
+            <input type="hidden" name="_csrf" value="{{token}}">
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            <p class="mt-5 mb-3 text-muted">&copy; <a href="/"> waad store </a></p>
+        </form>
+    </div>
+    <style lang="scss" scoped>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+         
+        }
+
+        .form-signin {
+            width: 100%;
+            max-width: 330px;
+            padding: 15px;
+            margin: auto;
+        }
+
+        .form-signin .checkbox {
+            font-weight: 400;
+        }
+
+        .form-signin .form-control {
+            position: relative;
+            box-sizing: border-box;
+            height: auto;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .form-signin .form-control:focus {
+            z-index: 2;
+        }
+
+        .form-signin input[type="email"] {
+            margin-bottom: -1px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        .form-signin input[type="password"] {
+            margin-bottom: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+</body>
+
+</html>

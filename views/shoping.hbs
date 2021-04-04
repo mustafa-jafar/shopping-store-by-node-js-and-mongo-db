@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+
+<body>
+       
+    <h1>shopin cart page
+    </h1>
+    <div class="row">
+        <p class="col-lg-2">number
+
+        </p>
+        <p class="col-lg-2">product name
+
+        </p>
+        <p class="col">product number
+
+        </p>
+        <p class="col">product price
+
+        </p>
+    </div>
+    {{#each usercart}}
+    {{#each this._selectCard as |val index| }}
+    <div class="row">
+        <p class="col-lg-2">
+            <span>{{add @index}}</span>
+        </p>
+        <p class="col-lg-4">
+            {{val.name}}
+            <a href="/deleteproduct/{{index}}" class="btn btn-danger float-right"> delete</a>
+        </p>
+        <p class="col">
+            {{#if (checkquntaty @val.quntaty)}}
+               <a href="" class="btn disabled " ><i class="fas fa-arrow-alt-circle-left"></i></a> 
+            {{else}}
+                <a href="/cutproduct/{{index}}" class="btn  "><i class="fas fa-arrow-alt-circle-left" ></i></a>
+            {{/if}}
+           
+            {{val.quntaty}}
+             <a href="/addproduct/{{index}}" class="btn"><i class="fas fa-arrow-alt-circle-right"></i></a>
+          
+        </p>
+        <p class="col">
+            {{val.price}}
+        </p>
+    </div>
+       
+    {{/each}}
+       
+    {{/each}}
+    <div class="row">
+        <span class="col">total price : $ {{ totalPrice}}</span>
+    
+        <a href="checkout" class="btn btn-primary  ">check out
+        </a>
+    
+    </div>
+
+</body>
+
+</html>
